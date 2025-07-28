@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Easy Reader",
+  "version": "1.0",
+  "description": "Overlay article content with RTL/LTR support",
+  "permissions": ["activeTab", "contextMenus", "storage"],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"],
+    "css": ["styles.css"]
+  }],
+  "web_accessible_resources": [{
+    "resources": ["vazir.woff2"],
+    "matches": ["<all_urls>"]
+  }],
+  "privacy_policy": "https://arazgholami.com/easy-reader-privacy.html"
+}

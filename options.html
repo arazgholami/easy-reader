@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Reader Options</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="icon128.png" alt="Easy Reader Logo" class="logo">
+            <h1>Easy Reader</h1>
+        </header>
+        <main class="main-content">
+            <p class="description">Easy Reader helps you focus on the main content of any web page by displaying it in a clean, readable overlay.</p>
+            
+            <div class="option">
+                <div class="option-text">
+                    <label for="instant-mode">Instant Mode</label>
+                    <p>Automatically open the reader view on page load. If disabled, you will need to click the extension icon to activate it.</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="instant-mode">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            
+            <div class="option">
+                <div class="option-text">
+                    <label for="fullscreen-mode">Fullscreen Mode</label>
+                    <p>When enabled, the reader will take up the entire screen instead of showing a centered overlay.</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="fullscreen-mode">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="social-links">
+                <a href="https://chromewebstore.google.com/detail/t%C3%BCrkc%C9%99-keyboard/pballgdgcbfjamhjggkdjafegakccdjb" target="_blank" title="Chrome Web Store">
+                    <img src="https://www.google.com/chrome/static/images/chrome-logo.svg" alt="Chrome Web Store">
+                </a>
+                <a href="https://github.com/arazgholami/easy-reader" target="_blank" title="GitHub Repository">
+                    <img src="https://github.githubassets.com/favicons/favicon.svg" alt="GitHub">
+                </a>
+            </div>
+            <p class="author">Made with ❤️ by <a href="https://github.com/arazgholami/">Araz Gholami</a></p>
+        </main>
+    </div>
+    <script src="options.js"></script>
+</body>
+</html>

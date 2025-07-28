@@ -1,0 +1,232 @@
+@font-face {
+    font-family: 'Vazir';
+    src: url(chrome-extension://__MSG_@@extension_id__/vazir.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.article-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-family: 'Vazir', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.article-overlay.visible {
+    opacity: 1;
+}
+
+.overlay-content {
+    background: white;
+    border-radius: 12px;
+    max-width: 800px;
+    max-height: 90vh;
+    width: 90%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transform: translateY(20px);
+    transition: transform 0.3s ease, border-radius 0.3s ease, max-width 0.3s ease, max-height 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+/* Fullscreen mode styles */
+.fullscreen-mode {
+    overflow: hidden;
+}
+
+.fullscreen-mode .overlay-content {
+    max-width: 100%;
+    max-height: 100vh;
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.fullscreen-mode .overlay-body {
+    max-height: calc(100vh - 80px);
+    scrollbar-width: thin;
+    scrollbar-color: #c1c1c1 transparent;
+}
+
+/* Ensure scrollbar is always on the right */
+.overlay-body {
+    scrollbar-gutter: stable;
+}
+
+/* Custom scrollbar for WebKit browsers */
+.overlay-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.overlay-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.overlay-body::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    border-radius: 4px;
+}
+
+.overlay-body::-webkit-scrollbar-thumb:hover {
+    background-color: #a8a8a8;
+}
+
+.article-overlay.visible .overlay-content {
+    transform: translateY(0);
+}
+
+.overlay-header {
+    padding: 24px 32px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.overlay-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+    color: #1f2937;
+    flex: 1;
+    text-align: center;
+}
+
+.overlay-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.overlay-close:hover {
+    background: #f3f4f6;
+    color: #1f2937;
+}
+
+.overlay-body {
+    max-height: calc(90vh - 120px);
+    overflow-y: auto;
+    padding: 24px 32px 32px;
+    transition: max-height 0.3s ease;
+}
+
+.overlay-text {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #374151;
+    text-align: justify;
+}
+
+.overlay-text p {
+    margin: 0 0 20px 0;
+}
+
+.overlay-text a {
+    color: rgb(16, 99, 172);
+}
+
+.overlay-text a:hover {
+    color: rgb(16, 99, 172);
+    text-dergb(19, 123, 213)ine;
+}
+
+.article-section:not(:first-child) {
+    padding-top: 20px;
+}
+
+.article-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #111827;
+    text-align: justify;
+}
+
+.article-separator {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 16px 0;
+}
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.overlay-image {
+    flex: 1 1 200px;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: #f3f4f6;
+    min-width: 0;
+}
+
+.overlay-text p:last-child {
+    margin-bottom: 0;
+}
+
+[dir="rtl"] .overlay-content {
+    text-align: right;
+}
+
+[dir="rtl"] .overlay-header {
+    flex-direction: row-reverse;
+}
+
+[dir="ltr"] .overlay-content {
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .overlay-content {
+        width: 95%;
+        max-height: 95vh;
+    }
+
+    .overlay-header {
+        padding: 20px 24px 12px;
+    }
+
+    .overlay-title {
+        font-size: 20px;
+    }
+
+    .overlay-body {
+        padding: 20px 24px 24px;
+    }
+
+    .overlay-text {
+        font-size: 16px;
+    }
+}
+
+.overlay-image {
+    max-width: 100%;
+    height: auto;
+    margin: 0 0 10px 0;
+}
