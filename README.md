@@ -17,7 +17,7 @@ A Chrome extension that enhances your reading experience by providing a clean, d
 
 ## 🚀 Installation
 
-From Chrome Web Store: [PENDING]
+From Chrome Web Store: [Chrome WebStore](https://chromewebstore.google.com/detail/easy-reader/fijalbmgmpfidhhffjngcndldicejbbk)
 
 Manual:
 1. Clone this repository or download the source code
